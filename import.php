@@ -20,6 +20,23 @@ if(isset($_POST["submit"]))
   }
  }
 }
+if(isset($_POST['submit_button']))
+{
+    mysqli_query($connect, 'TRUNCATE TABLE participants');
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+if(isset($_POST['display_button'])){
+$sql = mysqli_query($connect,"SELECT * FROM participants");
+ if(! $sql ) {
+      die('Could not get data: ' . mysql_error());
+  }
+  else
+while($row = $sql->fetch_assoc()) {
+    echo "<tr><br><td>".$row["regno"]."</td>  <td>".$row["name"]."</td><br></tr>";
+  }
+}
+
 ?>  
 <!DOCTYPE html>  
 <html>  
@@ -38,5 +55,10 @@ if(isset($_POST["submit"]))
     <input type="submit" name="submit" value="Import" class="btn btn-info" />
    </div>
   </form>
+  <form method="post" action="">
+    <input name="submit_button" type="submit" value=" Truncate Table " />
+    <form method="post" action="">
+    <input name="display_button" type="submit" value=" Display users " />
+</form>
  </body>  
 </html>
