@@ -9,8 +9,7 @@ This E-certificates aims to provide E-certificate for a certain event or program
 
 ## Installation
 
-**-> Windows
-
+**-> Windows**
 1. Install XAMPP or WAMPP.
 2. Open XAMPP Control panel and start [apache] and [mysqp].
 3. Download project from github(https://github.com/vuld0/Ecertificates-app.git) or follow git bash commands:
